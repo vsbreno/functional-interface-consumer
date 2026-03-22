@@ -26,8 +26,12 @@ public class Product{
 		this.price = price;
 	}
 	
-	public static void myConsumer (Product p) {
+	public static void staticMyConsumer (Product p) {
 		p.setPrice(p.getPrice() * 1.1);
+	}
+	
+	public void nonStaticMyConsumer () {
+		setPrice(getPrice() * 1.1);
 	}
 	
 	@Override
