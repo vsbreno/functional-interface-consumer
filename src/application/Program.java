@@ -3,7 +3,6 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.function.Consumer;
 
 import model.entities.Product;
 
@@ -21,9 +20,7 @@ public class Program {
 		
 		double factor = 1.1;
 		
-		Consumer<Product> con = p -> p.setPrice(p.getPrice() * factor);
-		
-		list.forEach(con);
+		list.forEach(p -> p.setPrice(p.getPrice() * factor));
 		
 		list.forEach(System.out::println);
 	}
