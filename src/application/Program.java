@@ -19,13 +19,9 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		Consumer<Product> con = new Consumer<Product>() {
-			@Override
-			public void accept(Product p) {
-				p.setPrice(p.getPrice() * 1.1);
-			}
-			
-		};
+		double factor = 1.1;
+		
+		Consumer<Product> con = p -> p.setPrice(p.getPrice() * factor);
 		
 		list.forEach(con);
 		
